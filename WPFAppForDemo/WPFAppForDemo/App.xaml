@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:WPFAppForDemo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Gabriola"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Gabriola"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Gabriola"></Setter>
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="FontFamily" Value="Gabriola"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
