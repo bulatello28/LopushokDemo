@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WPFAppForDemo.ADO;
 
 namespace WPFAppForDemo
 {
@@ -13,5 +14,6 @@ namespace WPFAppForDemo
     /// </summary>
     public partial class App : Application
     {
+        public static DemoPracticeShaykhutdinov420Entities Connection = new DemoPracticeShaykhutdinov420Entities();
     }
 }
