@@ -21,11 +21,20 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <TextBox  x:Name="TbSearch" Width="700"></TextBox>
+            <TextBox Background="#00cc76" x:Name="TbSearch" Width="700"></TextBox>
             <TextBlock Background="#0000" Foreground="#0000">asdasdasdasd</TextBlock>
-            <ComboBox Width="350"></ComboBox>
+            <ComboBox x:Name="CbSort" SelectionChanged="ComboBox_SelectionChanged" Background="#00cc76" Width="350">
+                <ComboBoxItem>По возростанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
             <TextBlock Background="#0000" Foreground="#0000">asdasdasdasd</TextBlock>
-            <ComboBox Width="350"></ComboBox>
+            <ComboBox SelectionChanged="CbFilter_SelectionChanged" x:Name="CbFilter" Background="#00cc76" Width="350">
+                <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <ComboBoxItem Content="{Binding Title}"></ComboBoxItem>
+                </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
         <ListView  Grid.Column="1" Grid.Row="2" x:Name="LvProducts" BorderBrush="#E5E4E2"  Background="#00cc76" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" d:ItemsSource="{d:SampleData ItemCount=30}">
             <ListView.ItemsPanel>
@@ -57,7 +66,6 @@
                                 <TextBlock Text="{Binding Articul}" FontSize="30"></TextBlock>
                             </StackPanel>
                         </StackPanel>
-                        
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

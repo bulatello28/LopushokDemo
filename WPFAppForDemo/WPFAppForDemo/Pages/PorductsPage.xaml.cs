@@ -24,7 +24,8 @@ namespace WPFAppForDemo.Pages
         public PorductsPage()
         {
             InitializeComponent();
-            LvProducts.ItemsSource = GetInfo(); 
+            LvProducts.ItemsSource = GetInfo();
+            CbFilter.ItemsSource = App.Connection.ProductType.ToList();
         }
         public List<ProductInfo> GetInfo()
         {
@@ -38,6 +39,23 @@ namespace WPFAppForDemo.Pages
             }
             return productInfos;
         }
-        
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CbSort.SelectedItem != null)
+            {
+                if (CbSort.SelectedIndex == 0)
+                {
+                    
+                }
+            }
+        }
+
+        private void CbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = CbFilter.SelectedItem as ADO.ProductType;
+            var products = App.Connection.Product.Where(x => x.IdProductType == item.Id).ToList();
+            LvProducts.ItemsSource = products;
+        }
     }
 }
